@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title: string = 'angular-19-template';
+  title = 'angular-19-template';
 }
