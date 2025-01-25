@@ -13,7 +13,7 @@
     "clean": "echo '🧽 Cleaning up...' && rmdir /s /q node_modules && rmdir /s /q dist && del /q package-lock.json",
     "prepare": "husky",
     "pre-commit": "lint-staged",
-    "pre-push": "echo '🧪 Running tests with coverage...' && ng test --browsers ChromeHeadless --watch=false --code-coverage"
+    "pre-push": "echo '🧪 Running tests with coverage...' && ng test --browsers ChromeHeadless --watch=false --code-coverage && node check-coverage.js 85"
   },
   "lint-staged": {
     "*.{js,ts,css,html}": [
