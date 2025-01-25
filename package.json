@@ -3,14 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint",
+    "start": "echo '🚀 Starting development server...' && ng serve",
+    "build": "echo '🏗️ Building project...' && ng build",
+    "watch": "echo '👀 Watching for changes...' && ng build --watch --configuration development",
+    "test": "echo '🧪 Running tests with coverage...' && ng test --browsers=ChromeHeadless --code-coverage",
+    "lint": "echo '🔍 Linting...' && eslint .",
+    "lint-fix": "echo '🔧 Linting and fixing issues...' && eslint --fix . && prettier --write .",
+    "format": "echo '✨ Formatting code with Prettier...' && prettier --write .",
+    "clean": "echo '🧽 Cleaning up...' && rm -rf ./node_modules ./dist && rm package-lock.json",
     "prepare": "husky",
-    "pre-commit": "pretty-quick --staged && ng lint",
-    "pre-push": "ng test --browsers ChromeHeadless --watch=false"
+    "pre-commit": "pretty-quick --staged && npm run lint",
+    "pre-push": "echo '🧪 Running tests with coverage...' && ng test --browsers ChromeHeadless --watch=false --code-coverage"
   },
   "private": true,
   "dependencies": {
