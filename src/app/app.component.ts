@@ -9,5 +9,4 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-19-template';
-  a = '';
 }
