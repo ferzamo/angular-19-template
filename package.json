@@ -17,8 +17,8 @@
   },
   "lint-staged": {
     "*.{js,ts,css,html}": [
-      "npm run lint-fix",
-      "npm run format"
+      "npm run format",
+      "npm run lint"
     ]
   },
   "private": true,
