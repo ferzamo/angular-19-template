@@ -10,7 +10,7 @@
     "lint": "echo '🔍 Linting...' && eslint .",
     "lint-fix": "echo '🔧 Linting and fixing issues...' && eslint --fix . && prettier --write .",
     "format": "echo '✨ Formatting code with Prettier...' && prettier --write .",
-    "clean": "echo '🧽 Cleaning up...' && rm -rf ./node_modules ./dist && rm package-lock.json",
+    "clean": "echo '🧽 Cleaning up...' && rmdir /s /q node_modules && rmdir /s /q dist && del /q package-lock.json",
     "prepare": "husky",
     "pre-commit": "pretty-quick --staged && npm run lint",
     "pre-push": "echo '🧪 Running tests with coverage...' && ng test --browsers ChromeHeadless --watch=false --code-coverage"
