@@ -2,7 +2,7 @@ module.exports = function (config) {
   config.set({
     reporters: ['progress', 'coverage'],
     coverageReporter: {
-      type: 'json-summary', // Genera un archivo en formato JSON
+      type: 'text-summary',
       dir: 'coverage/',
       check: {
         global: {
