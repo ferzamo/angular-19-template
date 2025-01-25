@@ -6,7 +6,7 @@
     "start": "echo '🚀 Starting development server...' && ng serve",
     "build": "echo '🏗️ Building project...' && ng build",
     "watch": "echo '👀 Watching for changes...' && ng build --watch --configuration development",
-    "test": "echo '🧪 Running tests with coverage...' && ng test --browsers=ChromeHeadless --code-coverage",
+    "test": "echo '🧪 Running tests...' && jest",
     "test:coverage": "echo '🧪 Running tests with coverage...' && jest --coverage",
     "lint": "echo '🔍 Linting...' && eslint",
     "lint-fix": "echo '🔧 Linting and fixing issues...' && eslint --fix",
@@ -14,7 +14,7 @@
     "clean": "echo '🧽 Cleaning up...' && rmdir /s /q node_modules && rmdir /s /q dist && del /q package-lock.json",
     "prepare": "husky",
     "pre-commit": "lint-staged",
-    "pre-push": "echo '🧪 Running tests with coverage...' && npm run test:coverage"
+    "pre-push": "npm run test:coverage"
   },
   "lint-staged": {
     "*.{js,ts,css,html}": [
