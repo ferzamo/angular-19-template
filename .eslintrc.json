@@ -16,38 +16,38 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
-        // Obliga a definir tipos de retorno en funciones y métodos
+        // Enforces explicit return types on functions and methods.
         "@typescript-eslint/explicit-function-return-type": [
           "error",
           {
-            "allowExpressions": true, // Permite omitir el tipo en funciones anónimas
-            "allowHigherOrderFunctions": true, // Permite omitir el tipo en funciones de orden superior
-            "allowTypedFunctionExpressions": true // Permite omitir el tipo en expresiones de función tipadas
+            "allowExpressions": true,
+            "allowHigherOrderFunctions": true,
+            "allowTypedFunctionExpressions": true
           }
         ],
 
-        // Obliga a definir tipos en parámetros de funciones
+        // Requires explicit types for module boundaries (e.g., function parameters and return types).
         "@typescript-eslint/explicit-module-boundary-types": "error",
 
-        // Evita tipos redundantes (como `const x: number = 10`)
+        // Disables inferring types for obvious cases (e.g., `const x = 10`).
         "@typescript-eslint/no-inferrable-types": "off",
 
-        // Obliga a definir tipos explícitamente en propiedades de clase
+        // Enforces explicit type definitions for class properties, variables, and parameters.
         "@typescript-eslint/typedef": [
           "error",
           {
-            "arrowParameter": true, // Parámetros en funciones flecha
-            "variableDeclaration": true, // Declaraciones de variables
-            "variableDeclarationIgnoreFunction": true, // Ignora funciones en declaraciones de variables
-            "propertyDeclaration": true, // Propiedades de clase (esto es lo que necesitas)
-            "memberVariableDeclaration": true, // Variables miembro de clase
-            "parameter": true, // Parámetros de función
-            "objectDestructuring": false, // No obliga en destructuración de objetos
-            "arrayDestructuring": false // No obliga en destructuración de arrays
+            "arrowParameter": true,
+            "variableDeclaration": true,
+            "variableDeclarationIgnoreFunction": true,
+            "propertyDeclaration": true,
+            "memberVariableDeclaration": true,
+            "parameter": true,
+            "objectDestructuring": false,
+            "arrayDestructuring": false
           }
         ],
 
-        // Regla para obligar a usar public, private o protectedd
+        // Requires explicit accessibility modifiers (e.g., `public`, `private`, `protected`) for class members.
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {
@@ -62,39 +62,33 @@
           }
         ],
 
-        // Regla para ordenar miembros (public antes que private)
+        // Enforces a consistent order for class members (e.g., public before private).
         "@typescript-eslint/member-ordering": [
           "error",
           {
             "default": {
               "memberTypes": [
-                // Campos públicos
                 "public-static-field",
                 "public-instance-field",
                 "public-abstract-field",
                 "public-field",
-
-                // Campos privados
                 "private-static-field",
                 "private-instance-field",
                 "private-field",
-
-                // Métodos públicos
                 "public-static-method",
                 "public-instance-method",
                 "public-abstract-method",
                 "public-method",
-
-                // Métodos privados
                 "private-static-method",
                 "private-instance-method",
                 "private-method"
               ],
-              "order": "alphabetically" // Orden alfabético dentro de cada grupo
+              "order": "alphabetically"
             }
           }
         ],
 
+        // Enforces kebab-case component selectors with the `app` prefix.
         "@angular-eslint/component-selector": [
           "error",
           {
@@ -103,6 +97,8 @@
             "style": "kebab-case"
           }
         ],
+
+        // Enforces camelCase directive selectors with the `app` prefix.
         "@angular-eslint/directive-selector": [
           "error",
           {
