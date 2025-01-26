@@ -1,56 +1,100 @@
 {
   "root": true,
   "ignorePatterns": ["projects/**/*"],
-  "plugins": ["unused-imports", "simple-import-sort", "prettier"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
   "overrides": [
     {
       "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
       "extends": [
-        "airbnb-base",
-        "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
       ],
       "rules": {
-        // ESLint rules
-        "import/prefer-default-export": "off",
-        "import/first": "error",
-        "import/newline-after-import": "error",
-        "import/no-duplicates": "error",
-        "max-len": ["error", 120],
-        "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error",
-        // eslint-plugin-unused-imports rules
-        "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars": [
-          "warn",
-          {
-            "vars": "all",
-            "varsIgnorePattern": "^_",
-            "args": "after-used",
-            "argsIgnorePattern": "^_"
-          }
-        ],
-        // TypeScript Eslint rules
-        "indent": ["error", {}],
-        "@typescript-eslint/comma-dangle": "off",
-        "@typescript-eslint/lines-between-class-members": "off",
-        "@typescript-eslint/quotes": ["error", "double"],
-        "@typescript-eslint/no-shadow": "error",
-        "@typescript-eslint/no-explicit-any": 0,
-        // Angular ESLint rules
-        "@angular-eslint/directive-selector": [
+        // Obliga a definir tipos de retorno en funciones y métodos
+        "@typescript-eslint/explicit-function-return-type": [
           "error",
           {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
+            "allowExpressions": true, // Permite omitir el tipo en funciones anónimas
+            "allowHigherOrderFunctions": true, // Permite omitir el tipo en funciones de orden superior
+            "allowTypedFunctionExpressions": true // Permite omitir el tipo en expresiones de función tipadas
           }
         ],
+
+        // Obliga a definir tipos en parámetros de funciones
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+
+        // Evita tipos redundantes (como `const x: number = 10`)
+        "@typescript-eslint/no-inferrable-types": "off",
+
+        // Obliga a definir tipos explícitamente en propiedades de clase
+        "@typescript-eslint/typedef": [
+          "error",
+          {
+            "arrowParameter": true, // Parámetros en funciones flecha
+            "variableDeclaration": true, // Declaraciones de variables
+            "variableDeclarationIgnoreFunction": true, // Ignora funciones en declaraciones de variables
+            "propertyDeclaration": true, // Propiedades de clase (esto es lo que necesitas)
+            "memberVariableDeclaration": true, // Variables miembro de clase
+            "parameter": true, // Parámetros de función
+            "objectDestructuring": false, // No obliga en destructuración de objetos
+            "arrayDestructuring": false // No obliga en destructuración de arrays
+          }
+        ],
+
+        // Regla para obligar a usar public, private o protectedd
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "accessors": "explicit",
+              "constructors": "no-public",
+              "methods": "explicit",
+              "properties": "explicit",
+              "parameterProperties": "explicit"
+            }
+          }
+        ],
+
+        // Regla para ordenar miembros (public antes que private)
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "memberTypes": [
+                // Campos públicos
+                "public-static-field",
+                "public-instance-field",
+                "public-abstract-field",
+                "public-field",
+
+                // Campos privados
+                "private-static-field",
+                "private-instance-field",
+                "private-field",
+
+                // Métodos públicos
+                "public-static-method",
+                "public-instance-method",
+                "public-abstract-method",
+                "public-method",
+
+                // Métodos privados
+                "private-static-method",
+                "private-instance-method",
+                "private-method"
+              ],
+              "order": "alphabetically" // Orden alfabético dentro de cada grupo
+            }
+          }
+        ],
+
         "@angular-eslint/component-selector": [
           "error",
           {
@@ -58,20 +102,21 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
         ]
       }
     },
     {
       "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"]
-    },
-    {
-      "files": ["*.html"],
-      "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": ["plugin:prettier/recommended"],
-      "rules": {
-        "prettier/prettier": ["error", { "parser": "angular" }]
-      }
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
     }
   ]
 }

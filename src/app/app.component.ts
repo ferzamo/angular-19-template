@@ -8,5 +8,22 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-19-template';
+  private set aa(a: string) {}
+  public title: string = 'angular-19-template';
+  private heha: string = 'as';
+
+  constructor() {}
+
+  public b(): boolean {
+    return true;
+  }
+
+  private a(): boolean {
+    return true;
+  }
+}
+
+export interface IFoo {
+  set bar(value: number);
+  get bar(): number;
 }
