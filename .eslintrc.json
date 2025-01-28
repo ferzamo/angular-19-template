@@ -32,21 +32,6 @@
         // Disables inferring types for obvious cases (e.g., `const x = 10`).
         "@typescript-eslint/no-inferrable-types": "off",
 
-        // Enforces explicit type definitions for class properties, variables, and parameters.
-        "@typescript-eslint/typedef": [
-          "error",
-          {
-            "arrowParameter": true,
-            "variableDeclaration": true,
-            "variableDeclarationIgnoreFunction": true,
-            "propertyDeclaration": true,
-            "memberVariableDeclaration": true,
-            "parameter": true,
-            "objectDestructuring": false,
-            "arrayDestructuring": false
-          }
-        ],
-
         // Requires explicit accessibility modifiers (e.g., `public`, `private`, `protected`) for class members.
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
