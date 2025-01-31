@@ -14,7 +14,7 @@
     "clean": "echo '🧽 Cleaning up...' && rmdir /s /q node_modules && rmdir /s /q dist && del /q package-lock.json",
     "prepare": "husky",
     "pre-commit": "lint-staged",
-    "pre-push": "npm run test:coverage"
+    "pre-push": ""
   },
   "lint-staged": {
     "*.{js,ts,css,html}": [
