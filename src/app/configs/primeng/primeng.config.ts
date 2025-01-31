@@ -10,6 +10,7 @@ export const primengConfig = {
         name: 'primeng',
         order: 'tailwind-base, primeng, tailwind-utilities',
       },
+      darkModeSelector: '.my-app-dark',
     },
   },
 };

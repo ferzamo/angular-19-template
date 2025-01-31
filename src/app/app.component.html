@@ -1,10 +1,4 @@
-<p>{{ store.title() }}</p>
-<p>{{ store.titleLength() }}</p>
-<div>{{ 'hello' | translate }}</div>
-<p-button label="Check" />
-<router-outlet />
-
-<div class="card flex sm:justify-center">
+<div class="card flex sm:justify-center mt-40">
   <div class="flex flex-col gap-6 w-full sm:w-auto">
     <div class="flex flex-col sm:flex-row sm:items-center gap-6">
       <div class="flex-auto">
@@ -23,12 +17,19 @@
       </div>
       <div class="flex-1">
         <label for="country" class="block font-semibold mb-2">Password</label>
-        <p-password inputId="date" [feedback]="false" />
+        <p-password inputId="password" [feedback]="false" />
       </div>
     </div>
     <div class="flex-auto">
       <label for="message" class="block font-semibold mb-2">Message</label>
       <textarea pTextarea id="message" class="w-full" rows="4"></textarea>
     </div>
+    <div class="flex justify-between">
+      <p-button label="Toggle theme" (click)="changeThemeIndigo()" />
+      <p-button label="Toggle theme" (click)="changeThemeZinc()" />
+      <p-button label="Toggle dark mode" (click)="toggleDarkMode()" />
+    </div>
   </div>
 </div>
+
+<router-outlet />

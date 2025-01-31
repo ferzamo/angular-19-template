@@ -5,8 +5,8 @@ import { provideRouter } from '@angular/router';
 import { provideTranslateService } from '@ngx-translate/core';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
-import { primengConfig } from './configs/primeng.config';
-import { translateConfig } from './configs/translate.config';
+import { primengConfig } from './configs/primeng/primeng.config';
+import { translateConfig } from './configs/translate/translate.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
