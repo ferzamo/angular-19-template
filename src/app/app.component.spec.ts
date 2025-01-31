@@ -1,10 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TranslatePipe } from '@ngx-translate/core';
+import { AppStore } from './core/store/app.store';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, TranslatePipe],
+      providers: [AppStore],
     }).compileComponents();
   });
 
