@@ -2,10 +2,8 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppStore } from './core/store/app.store';
 import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { DatePickerModule } from 'primeng/datepicker';
-import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
 import { PasswordModule } from 'primeng/password';
 import { usePreset } from '@primeng/themes';
@@ -17,10 +15,8 @@ import { ZincPreset } from './configs/primeng/presets/zinc';
   imports: [
     RouterOutlet,
     ButtonModule,
-    TableModule,
     InputTextModule,
     DatePickerModule,
-    SelectModule,
     TextareaModule,
     PasswordModule,
   ],

@@ -13,6 +13,9 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
     const app: AppComponent = fixture.componentInstance;
+    app.changeThemeIndigo();
+    app.changeThemeZinc();
+    app.toggleDarkMode();
     expect(app).toBeTruthy();
   });
 });

@@ -14,7 +14,7 @@
     "clean": "echo '🧽 Cleaning up...' && rmdir /s /q node_modules && rmdir /s /q dist && del /q package-lock.json",
     "prepare": "husky",
     "pre-commit": "lint-staged",
-    "pre-push": ""
+    "pre-push": "npm run test:coverage"
   },
   "lint-staged": {
     "*.{js,ts,css,html}": [
@@ -67,6 +67,7 @@
     "jest-preset-angular": "^14.5.1",
     "lint-staged": "^15.4.2",
     "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
     "typescript": "~5.7.2"
   }
 }
