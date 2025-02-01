@@ -6,6 +6,14 @@ const config: Config = {
   moduleNameMapper: {
     '@primeng/(.*)': '<rootDir>/node_modules/@primeng/themes',
   },
+  coverageThreshold: {
+    global: {
+      branches: 110,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
 };
 
 export default config;
