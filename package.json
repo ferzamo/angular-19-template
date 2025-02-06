@@ -11,7 +11,7 @@
     "format": "echo '✨ Formatting code with Prettier...' && prettier --write",
     "clean": "echo '🧽 Cleaning up...' && rmdir /s /q node_modules && rmdir /s /q dist && del /q package-lock.json",
     "prepare": "husky",
-    "commit": "git add --all && git-cz"
+    "commit": "git add . && git-cz"
   },
   "lint-staged": {
     "*.{js,ts,css,html}": [
