@@ -37,6 +37,6 @@ export class AppComponent {
 
   public toggleDarkMode(): void {
     const element = document.querySelector('html');
-    element?.classList.toggle('my-app-dark');
+    element?.classList.toggle('dark');
   }
 }
