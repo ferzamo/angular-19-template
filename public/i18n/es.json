@@ -3,5 +3,10 @@
     "PROFILE": "Perfil",
     "SETTINGS": "Configuración",
     "LOG_OUT": "Salir"
+  },
+  "ACCESIBILITY": {
+    "NOTIFICATIONS": "Ver notificaciones",
+    "OPEN_USER_MENU": "Abrir menú de usuario",
+    "TOGGLE_MOBILE_MENU": "Abrir o cerrar menú móvil"
   }
 }
