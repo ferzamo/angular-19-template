@@ -12,4 +12,10 @@ import { HeaderComponent } from './core/components/header/header.component';
 })
 export class AppComponent {
   public readonly store = inject(AppStore);
+
+  public menuItems: { label: string; url: string; icon: string }[] = [
+    { label: 'MENU.PROFILE', url: '/profile', icon: 'pi-user' },
+    { label: 'MENU.SETTINGS', url: '/settings', icon: 'pi-cog' },
+    { label: 'MENU.LOG_OUT', url: '/logout', icon: 'pi-sign-out' },
+  ];
 }

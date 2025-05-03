@@ -2,12 +2,14 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">
+        <!-- CAMPANY ICON -->
         <div class="shrink-0">
           <img class="size-8" [src]="store.logoImage()" alt="Your Company" />
         </div>
       </div>
       <div class="hidden md:block">
         <div class="ml-4 flex items-center md:ml-6">
+          <!-- USER NOTIFICATION ICON -->
           <p-button
             [icon]="'pi pi-bell'"
             styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-hidden"
@@ -15,8 +17,6 @@
             [text]="true"
             [size]="'large'"
           />
-
-          <!-- Profile dropdown -->
           <div class="relative ml-3" #menuRef>
             <div>
               <button
@@ -27,6 +27,7 @@
                 aria-haspopup="true"
                 (click)="toggleMenu($event)"
               >
+                <!-- USER ICON -->
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">Open user menu</span>
                 <img class="size-8 rounded-full" [src]="store.userImage()" alt="" />
@@ -40,35 +41,23 @@
                 aria-labelledby="user-menu-button"
                 tabindex="-1"
               >
-                <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-base text-gray-400 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700 focus:outline-none"
-                  role="menuitem"
-                  id="user-menu-item-0"
-                  >Your Profile</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-base text-gray-400 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700 focus:outline-none"
-                  role="menuitem"
-                  id="user-menu-item-1"
-                  >Settings</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-base text-gray-400 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700 focus:outline-none"
-                  role="menuitem"
-                  id="user-menu-item-2"
-                  >Sign out</a
-                >
+                @for (item of menuItems; track item.label) {
+                  <a
+                    [href]="item.url"
+                    class="flex items-center gap-2 px-4 font-medium py-2 text-base text-gray-400 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700 focus:outline-none"
+                    role="menuitem"
+                  >
+                    <i class="pi {{ item.icon }} text-lg"></i>
+                    {{ item.label | translate }}
+                  </a>
+                }
               </div>
             }
           </div>
         </div>
       </div>
+      <!-- MOBILE TOGGLE ICON -->
       <div class="-mr-2 flex md:hidden">
-        <!-- Mobile menu button -->
         <p-button
           [icon]="'pi ' + (showMenu ? 'pi-times' : 'pi-bars')"
           styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-hidden"
@@ -82,10 +71,10 @@
   </div>
 
   @if (showMenu) {
-    <!-- Mobile menu, show/hide based on menu state. -->
     <div class="md:hidden absolute top-16 left-0 w-full bg-gray-800 z-50" id="mobile-menu">
       <div class="border-t border-gray-700 pt-4 pb-3">
         <div class="flex items-center px-5">
+          <!-- MOBILE USER INFO -->
           <div class="shrink-0">
             <img class="size-10 rounded-full" [src]="store.userImage()" alt="" />
           </div>
@@ -103,21 +92,15 @@
           />
         </div>
         <div class="mt-3 space-y-1 px-2">
-          <a
-            href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-            >Your Profile</a
-          >
-          <a
-            href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-            >Settings</a
-          >
-          <a
-            href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-            >Sign out</a
-          >
+          @for (item of menuItems; track item.label) {
+            <a
+              [href]="item.url"
+              class="flex items-center gap-2 rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+            >
+              <i class="pi {{ item.icon }} text-lg"></i>
+              {{ item.label | translate }}
+            </a>
+          }
         </div>
       </div>
     </div>

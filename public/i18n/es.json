@@ -1,3 +1,7 @@
 {
-  "hello": "hola"
+  "MENU": {
+    "PROFILE": "Perfil",
+    "SETTINGS": "Configuración",
+    "LOG_OUT": "Salir"
+  }
 }
