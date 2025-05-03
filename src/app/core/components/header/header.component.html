@@ -12,7 +12,7 @@
           <!-- USER NOTIFICATION ICON -->
           <p-button
             [icon]="'pi pi-bell'"
-            styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-hidden"
+            styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-hidden"
             [rounded]="true"
             [text]="true"
             [size]="'large'"
@@ -60,7 +60,7 @@
       <div class="-mr-2 flex md:hidden">
         <p-button
           [icon]="'pi ' + (showMenu ? 'pi-times' : 'pi-bars')"
-          styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-hidden"
+          styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-hidden"
           [rounded]="true"
           [text]="true"
           [size]="'large'"
@@ -85,7 +85,7 @@
           <p-button
             [icon]="'pi pi-bell'"
             class="ml-auto"
-            styleClass="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-hidden"
+            styleClass="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-hidden"
             [rounded]="true"
             [text]="true"
             [size]="'large'"
@@ -95,7 +95,7 @@
           @for (item of menuItems; track item.label) {
             <a
               [href]="item.url"
-              class="flex items-center gap-2 rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+              class="flex items-center gap-2 rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-hidden"
             >
               <i class="pi {{ item.icon }} text-lg"></i>
               {{ item.label | translate }}
